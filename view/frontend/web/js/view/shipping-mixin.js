@@ -218,6 +218,7 @@ define([
         },
 
         ccccUpdateAddressRegistered: function (addressData, source, context) {
+			source.set('shippingAddress',  quote.shippingAddress());
             var newShippingAddress = addressHelper.ccccUpdateAddressRegistered(addressData, quote.shippingAddress(), '.shipping-address-item.selected-item', source, context);
             return;
 
