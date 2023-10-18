@@ -1,7 +1,7 @@
 {
     "name": "endereco/magento2-address-validation",
     "description": "Magento 2 address validation supporting Endereco as service!",
-    "version": "2.0.15",
+    "version": "2.0.16",
     "type": "magento2-module",
     "keywords": [
         "Magento 2",
@@ -13,8 +13,8 @@
     "license": "GPL-3.0+",
     "authors": [
         {
-            "name": "Tobias Wassermann",
-            "email": "tobias@4c.media",
+            "name": "Celocore GmbH",
+            "email": "development@celocore.de",
             "role": "Developer"
         }
     ],
