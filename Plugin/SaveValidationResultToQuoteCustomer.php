@@ -1,15 +1,15 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Plugin
+ * Module: Endereco\Addressvalidation\Plugin
  * Copyright: (c) 2021 cccc.de
  * Date: 22.06.21 16:16
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Plugin;
+namespace Endereco\Addressvalidation\Plugin;
 
-use CCCC\Addressvalidation\Model\ConfigProvider;
+use Endereco\Addressvalidation\Model\ConfigProvider;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\OrderFactory;
 class SaveValidationResultToQuoteCustomer

@@ -1,15 +1,15 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Generator
+ * Module: Endereco\Addressvalidation\Generator
  * Copyright: (c) 2019 cccc.de
  * Date: 2019-05-22 16:05
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Generator;
+namespace Endereco\Addressvalidation\Generator;
 
-use CCCC\Addressvalidation\Model\Config\Source\RefererMode;
+use Endereco\Addressvalidation\Model\Config\Source\RefererMode;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\UrlInterface;
 

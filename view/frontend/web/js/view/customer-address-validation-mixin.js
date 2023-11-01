@@ -3,8 +3,8 @@
 define([
     'jquery',
     'Magento_Checkout/js/model/full-screen-loader',
-    'CCCC_Addressvalidation/js/endereco-setup',
-    'CCCC_Addressvalidation/js/helper/configuration'
+    'Endereco_Addressvalidation/js/endereco-setup',
+    'Endereco_Addressvalidation/js/helper/configuration'
 ], function ($, loader, enderecosdk, configurationHelper) {
     'use strict';
 
@@ -62,7 +62,6 @@ define([
 
                     window.EnderecoIntegrator.integratedObjects.customer_address_ams._changed=true;
                     window.EnderecoIntegrator.integratedObjects.customer_address_ams.cb.onFormSubmit(new Event('check'));
-                    debugger;
                     evt.preventDefault();
                     return false;
 

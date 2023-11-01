@@ -1,34 +1,34 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="CCCC\Addressvalidation\Api\UpdateAddressInterface" type="CCCC\Addressvalidation\Service\V1\UpdateAddress" />
-    <preference for="CCCC\Addressvalidation\Api\Data\UpdateAddressResponseInterface" type="CCCC\Addressvalidation\Service\V1\Data\UpdateAddressResponse" />
-    <preference for="CCCC\Addressvalidation\Api\Data\EditAddressResponseInterface" type="CCCC\Addressvalidation\Service\V1\Data\EditAddressResponse" />
+    <preference for="Endereco\Addressvalidation\Api\UpdateAddressInterface" type="Endereco\Addressvalidation\Service\V1\UpdateAddress" />
+    <preference for="Endereco\Addressvalidation\Api\Data\UpdateAddressResponseInterface" type="Endereco\Addressvalidation\Service\V1\Data\UpdateAddressResponse" />
+    <preference for="Endereco\Addressvalidation\Api\Data\EditAddressResponseInterface" type="Endereco\Addressvalidation\Service\V1\Data\EditAddressResponse" />
 
-    <type name="CCCC\Addressvalidation\Logger\Handler\RequestResponseHandler">
+    <type name="Endereco\Addressvalidation\Logger\Handler\RequestResponseHandler">
         <arguments>
             <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
         </arguments>
     </type>
-    <type name="CCCC\Addressvalidation\Logger\RequestLogger">
+    <type name="Endereco\Addressvalidation\Logger\RequestLogger">
         <arguments>
-            <argument name="name" xsi:type="string">CCCC_AddressValidation_Request</argument>
+            <argument name="name" xsi:type="string">Endereco_AddressValidation_Request</argument>
             <argument name="handlers"  xsi:type="array">
-                <item name="system" xsi:type="object">CCCC\Addressvalidation\Logger\Handler\RequestResponseHandler</item>
+                <item name="system" xsi:type="object">Endereco\Addressvalidation\Logger\Handler\RequestResponseHandler</item>
             </argument>
         </arguments>
     </type>
 
     <type name="Magento\Framework\App\Request\CsrfValidator">
-        <plugin name="cccc_csrf_validation_disable" type="CCCC\Addressvalidation\Plugin\CsrfValidatorSkip" />
+        <plugin name="cccc_csrf_validation_disable" type="Endereco\Addressvalidation\Plugin\CsrfValidatorSkip" />
     </type>
 
     <type name="Magento\Checkout\Model\PaymentInformationManagement">
         <plugin name="cccc_save_validation_result_as_comment"
-            type="CCCC\Addressvalidation\Plugin\SaveValidationResultToQuoteCustomer" sortOrder="10"/>
+            type="Endereco\Addressvalidation\Plugin\SaveValidationResultToQuoteCustomer" sortOrder="10"/>
     </type>
 
     <type name="Magento\Checkout\Model\GuestPaymentInformationManagement">
         <plugin name="cccc_save_validation_result_as_comment_guest"
-                type="CCCC\Addressvalidation\Plugin\SaveValidationResultToQuote" sortOrder="10"/>
+                type="Endereco\Addressvalidation\Plugin\SaveValidationResultToQuote" sortOrder="10"/>
     </type>
 </config>

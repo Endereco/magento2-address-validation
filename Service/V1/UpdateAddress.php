@@ -1,19 +1,19 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Service\V1
+ * Module: Endereco\Addressvalidation\Service\V1
  * Copyright: (c) 2019 cccc.de
  * Date: 2019-07-02 11:23
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Service\V1;
+namespace Endereco\Addressvalidation\Service\V1;
 
 use Magento\Quote\Api\Data\AddressInterface;
 use Magento\Quote\Api\Data\AddressInterfaceFactory;
 use Magento\Customer\Api\AddressRepositoryInterface;
-use CCCC\Addressvalidation\Service\V1\Data\EditAddressResponseFactory;
-use CCCC\Addressvalidation\Api\UpdateAddressInterface;
+use Endereco\Addressvalidation\Service\V1\Data\EditAddressResponseFactory;
+use Endereco\Addressvalidation\Api\UpdateAddressInterface;
 use Magento\Quote\Model\Quote;
 
 class UpdateAddress implements UpdateAddressInterface
@@ -21,7 +21,7 @@ class UpdateAddress implements UpdateAddressInterface
     /**
      * Factory for the response object
      *
-     * @var \CCCC\Addressvalidation\Service\V1\Data\EditAddressResponseFactory
+     * @var \Endereco\Addressvalidation\Service\V1\Data\EditAddressResponseFactory
      */
     protected $responseFactory;
 
@@ -58,7 +58,7 @@ class UpdateAddress implements UpdateAddressInterface
     /**
      * @param  mixed $cartId
      * @param  AddressInterface $addressData
-     * @return \CCCC\Addressvalidation\Service\V1\Data\UpdateAddressResponse
+     * @return \Endereco\Addressvalidation\Service\V1\Data\UpdateAddressResponse
      */
     public function updateAddress($cartId, AddressInterface $addressData)
     {

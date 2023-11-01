@@ -9,7 +9,7 @@
     <update handle="customer_account"/>
     <body>
         <referenceContainer name="content">
-            <block class="CCCC\Addressvalidation\Block\Customer\Address\ConfigData" name="customer_address_edit_endereco" template="CCCC_Addressvalidation::customer/address/configdata.phtml" before="-">
+            <block class="Endereco\Addressvalidation\Block\Customer\Address\ConfigData" name="customer_address_edit_endereco" template="Endereco_Addressvalidation::customer/address/configdata.phtml" before="-">
             </block>
         </referenceContainer>
     </body>

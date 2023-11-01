@@ -1,15 +1,15 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Controller
+ * Module: Endereco\Addressvalidation\Controller
  * Copyright: (c) 2021 cccc.de
  * Date: 17.06.21 12:40
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Controller\Proxy;
+namespace Endereco\Addressvalidation\Controller\Proxy;
 
-use CCCC\Addressvalidation\Operation\ProxyOperation;
+use Endereco\Addressvalidation\Operation\ProxyOperation;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\RequestInterface;

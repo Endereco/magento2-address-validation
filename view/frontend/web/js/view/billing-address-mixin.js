@@ -9,10 +9,10 @@ define([
     'Magento_Checkout/js/action/create-billing-address',
     'Magento_Checkout/js/action/select-billing-address',
     'Magento_Checkout/js/model/payment/place-order-hooks',
-    'CCCC_Addressvalidation/js/helper/logger',
-    'CCCC_Addressvalidation/js/helper/configuration',
-    'CCCC_Addressvalidation/js/helper/address',
-    'CCCC_Addressvalidation/js/endereco-setup',
+    'Endereco_Addressvalidation/js/helper/logger',
+    'Endereco_Addressvalidation/js/helper/configuration',
+    'Endereco_Addressvalidation/js/helper/address',
+    'Endereco_Addressvalidation/js/endereco-setup',
     'Magento_Checkout/js/model/shipping-save-processor'
 ], function ($, ko, quote, checkoutData, customer, createBillingAddress, selectBillingAddress, placeOrderHooks, logger, configurationHelper, addressHelper, enderecosdk, shippingSaveProcessor) {
     'use strict';

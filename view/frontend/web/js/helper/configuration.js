@@ -1,8 +1,9 @@
 /*jshint browser:true jquery:true*/
 /*global alert*/
 define([
-    'CCCC_Addressvalidation/js/helper/logger',
-], function (logger) {
+    'Endereco_Addressvalidation/js/helper/logger',
+	'jquery'
+], function (logger, $) {
     'use strict';
 
     return {
@@ -63,6 +64,9 @@ define([
 
         ccccGetAddressDataByFieldSelector: function(field, fallback) {
             var fieldSelector = this.ccccGetAdressDataFieldselector(field, fallback);
+			if ($('.form-address-edit .field [name="'+fieldSelector+'"]').length) {
+				return fieldSelector;
+			}
             var val = fieldSelector.replace(/\[([0-9]+)\]/, ".$1");
             logger.logData(
                 "shipping-mixin/ccccGetAddressDataByFieldSelector: Determined field selector for "+field+" (fallback: "+fallback+") => normalized result: "+val

@@ -1,13 +1,13 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Operation
+ * Module: Endereco\Addressvalidation\Operation
  * Copyright: (c) 2021 cccc.de
  * Date: 17.06.21 15:25
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Operation;
+namespace Endereco\Addressvalidation\Operation;
 
 class ProxyOperation extends BaseOperation
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace CCCC\Addressvalidation\Plugin;
+namespace Endereco\Addressvalidation\Plugin;
 
 use Magento\Framework\App\ActionInterface;
 use Magento\Framework\App\Request\CsrfValidator;
@@ -26,7 +26,7 @@ class CsrfValidatorSkip
         RequestInterface $request,
         ActionInterface $action
     ) {
-        if (strpos($this->url->getCurrentUrl(), '4cAddress/proxy/proxy') !== false) {
+        if (strpos($this->url->getCurrentUrl(), 'endereco/proxy/proxy') !== false) {
             return null;
         }
 

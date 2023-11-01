@@ -3,7 +3,7 @@
     <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>
             <argument name="configProviders" xsi:type="array">
-                <item name="cccc_addressvalidation_config_provider" xsi:type="object">CCCC\Addressvalidation\Model\ConfigProvider</item>
+                <item name="cccc_addressvalidation_config_provider" xsi:type="object">Endereco\Addressvalidation\Model\ConfigProvider</item>
             </argument>
         </arguments>
     </type>

@@ -10,13 +10,13 @@
             <label>Address Validation</label>
             <tab>cccc_config</tab>
 
-            <resource>CCCC_Addressvalidation::endereco_validation_configuration</resource>
+            <resource>Endereco_Addressvalidation::endereco_validation_configuration</resource>
 
             <group id="current_version" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Version</label>
                 <field id="version" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Current Version</label>
-                    <backend_model>CCCC\Addressvalidation\Model\Config\Version</backend_model>
+                    <backend_model>Endereco\Addressvalidation\Model\Config\Version</backend_model>
                 </field>
             </group>
 
@@ -32,7 +32,7 @@
                 <field id="directrequests" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Use direct requests</label>
                     <comment>Use pass-through-requests between Browser and Shop-Backend, do not use the Magento-routing. Extended Webserver
-                        configuration is required.</comment>
+                    configuration is required.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
 
@@ -54,7 +54,7 @@
                        showInStore="0">
                     <label>Referer-Mode</label>
                     <comment>Referer to send to Endereco</comment>
-                    <source_model>CCCC\Addressvalidation\Model\Config\Source\RefererMode</source_model>
+                    <source_model>Endereco\Addressvalidation\Model\Config\Source\RefererMode</source_model>
                     <validate>validate-no-empty</validate>
                 </field>
             </group>
@@ -97,7 +97,7 @@
 
                 <field id="convert_firstname" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>First name handling</label>
-                    <source_model>CCCC\Addressvalidation\Model\Config\Source\NameConversion</source_model>
+                    <source_model>Endereco\Addressvalidation\Model\Config\Source\NameConversion</source_model>
                     <validate>validate-no-empty</validate>
                     <depends>
                         <field id="address_check">1</field>
@@ -106,7 +106,7 @@
 
                 <field id="convert_lastname" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Last name handling</label>
-                    <source_model>CCCC\Addressvalidation\Model\Config\Source\NameConversion</source_model>
+                    <source_model>Endereco\Addressvalidation\Model\Config\Source\NameConversion</source_model>
                     <validate>validate-no-empty</validate>
                     <depends>
                         <field id="address_check">1</field>

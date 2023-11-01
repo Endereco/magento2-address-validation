@@ -2,9 +2,9 @@
 /*global alert*/
 define([
     'jquery',
-    'CCCC_Addressvalidation/js/helper/logger',
-    'CCCC_Addressvalidation/js/helper/configuration',
-    'CCCC_Addressvalidation/js/operation/edit-address',
+    'Endereco_Addressvalidation/js/helper/logger',
+    'Endereco_Addressvalidation/js/helper/configuration',
+    'Endereco_Addressvalidation/js/operation/edit-address',
     'Magento_Checkout/js/action/create-shipping-address'
 ], function ($, logger, configurationHelper, editAddress, createShippingAddress) {
     'use strict';

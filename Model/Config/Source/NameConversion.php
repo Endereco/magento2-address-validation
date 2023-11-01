@@ -1,5 +1,5 @@
 <?php
-namespace CCCC\Addressvalidation\Model\Config\Source;
+namespace Endereco\Addressvalidation\Model\Config\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 

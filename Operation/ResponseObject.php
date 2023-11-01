@@ -1,13 +1,13 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Operation
+ * Module: Endereco\Addressvalidation\Operation
  * Copyright: (c) 2019 cccc.de
  * Date: 2019-06-25 12:23
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Operation;
+namespace Endereco\Addressvalidation\Operation;
 
 class ResponseObject
 {

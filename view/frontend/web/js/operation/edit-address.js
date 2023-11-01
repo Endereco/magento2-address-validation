@@ -4,7 +4,7 @@ define([
     'jquery',
     'Magento_Checkout/js/model/url-builder',
     'mage/storage',
-    'CCCC_Addressvalidation/js/helper/logger',
+    'Endereco_Addressvalidation/js/helper/logger',
     'Magento_Checkout/js/model/full-screen-loader'
 ], function ($, urlBuilder, storage, logger, fullScreenLoader) {
     'use strict';

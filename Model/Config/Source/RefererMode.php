@@ -1,13 +1,13 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Model\Config\Source
+ * Module: Endereco\Addressvalidation\Model\Config\Source
  * Copyright: (c) 2019 cccc.de
  * Date: 2019-05-21 09:00
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Model\Config\Source;
+namespace Endereco\Addressvalidation\Model\Config\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 

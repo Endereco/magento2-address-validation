@@ -3,7 +3,7 @@
 define([
     'jquery',
     'Magento_Checkout/js/model/full-screen-loader',
-    'CCCC_Addressvalidation/js/endereco-setup'
+    'Endereco_Addressvalidation/js/endereco-setup'
 ], function ($, fullScreenLoader, enderecosdk) {
     'use strict';
 

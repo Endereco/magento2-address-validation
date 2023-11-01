@@ -1,13 +1,13 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Model\Config
+ * Module: Endereco\Addressvalidation\Model\Config
  * Copyright: (c) 2021 cccc.de
  * Date: 05.07.21 11:10
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Model\Config;
+namespace Endereco\Addressvalidation\Model\Config;
 
 class Version  extends \Magento\Framework\App\Config\Value
 {
@@ -56,7 +56,7 @@ class Version  extends \Magento\Framework\App\Config\Value
      */
     public function afterLoad()
     {
-        $version = $this->moduleResource->getDbVersion('CCCC_Addressvalidation');
+        $version = $this->moduleResource->getDbVersion('Endereco_Addressvalidation');
         $this->setValue($version);
     }
 }

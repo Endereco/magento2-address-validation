@@ -1,13 +1,13 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Logger\Handler
+ * Module: Endereco\Addressvalidation\Logger\Handler
  * Copyright: (c) 2021 cccc.de
  * Date: 13.05.21 20:28
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Logger\Handler;
+namespace Endereco\Addressvalidation\Logger\Handler;
 
 use Monolog\Logger;
 

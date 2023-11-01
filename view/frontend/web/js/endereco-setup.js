@@ -2,9 +2,9 @@
 /*global alert*/
 define([
     'jquery',
-    'CCCC_Addressvalidation/js/helper/logger',
+    'Endereco_Addressvalidation/js/helper/logger',
     'mage/translate',
-    'CCCC_Addressvalidation/js/endereco.min'
+    'Endereco_Addressvalidation/js/endereco.min'
 ], function ($, logger, translate) {
     'use strict';
 
@@ -21,6 +21,9 @@ define([
 
     function ccccGetAddressDataByFieldSelector(field, fallback) {
         var fieldSelector = ccccGetAdressDataFieldselector(field, fallback);
+		if ($('.form-address-edit .field [name="'+fieldSelector+'"]').length) {
+			return fieldSelector;
+		}
         var val = fieldSelector.replace(/\[([0-9]+)\]/, ".$1");
         logger.logData(
             "endereco-setup/ccccGetAddressDataByFieldSelector: Determined field selector for "+field+" (fallback: "+fallback+") => normalized result: "+val

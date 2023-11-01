@@ -32,7 +32,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "CCCC\\Addressvalidation\\": ""
+            "Endereco\\Addressvalidation\\": ""
         }
     },
     "repositories": {

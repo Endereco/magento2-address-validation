@@ -38,7 +38,7 @@ Install via composer:
 
 composer require devcccc/magento2-address-validation
 
-php bin/magento module:enable CCCC_Addressvalidation
+php bin/magento module:enable Endereco_Addressvalidation
 php bin/magento setup:upgrade
 
 //optional on production servers:
@@ -60,7 +60,7 @@ bin/magento setup:di:compile
 bin/magento setup:static-content:deploy
 
 After installation:
-php bin/magento module:enable CCCC_Addressvalidation
+php bin/magento module:enable Endereco_Addressvalidation
 php bin/magento setup:upgrade
 
 If your Magento installation is running into production mode you have also to deploy the static content files:
@@ -91,12 +91,12 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
 ....
 Now enable the direct requests in the settings of the extension within the Magento Admin-Backend.
-Menu: Stores => Configuration. Select "CCCC Config" => Address validation with Endereco => "Use direct requests" => Yes
+Menu: Stores => Configuration. Select "Endereco Config" => Address validation with Endereco => "Use direct requests" => Yes
 
 nginx Webserver
 For nginx a new location-Block within your nginx-site-configuration is required. Add this location:
 location /cccc_adressvalidation/direct {
-    root $MAGE_ROOT/app/code/CCCC/Addressvalidation/Controller/Proxy;
+    root $MAGE_ROOT/app/code/Endereco/Addressvalidation/Controller/Proxy;
     index DirectProxy.php;
     fastcgi_pass   fastcgi_backend;
     fastcgi_index  DirectProxy.php;
@@ -105,7 +105,7 @@ location /cccc_adressvalidation/direct {
 }
 This location-Block should be placed directly in the server-block for the Magento-shop.
 Now enable the direct requests in the settings of the extension within the Magento Admin-Backend.
-Menu: Stores => Configuration. Select "CCCC Config" => Address validation with Endereco => "Use direct requests" => Yes
+Menu: Stores => Configuration. Select "Endereco Config" => Address validation with Endereco => "Use direct requests" => Yes
 
 —-
 

@@ -1,13 +1,13 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Api\Data
+ * Module: Endereco\Addressvalidation\Api\Data
  * Copyright: (c) 2019 cccc.de
  * Date: 12.11.19 10:16
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Api\Data;
+namespace Endereco\Addressvalidation\Api\Data;
 
 interface EditAddressResponseInterface
 {

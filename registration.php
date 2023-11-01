@@ -8,6 +8,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'CCCC_Addressvalidation',
+    'Endereco_Addressvalidation',
     __DIR__
 );

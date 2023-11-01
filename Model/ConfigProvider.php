@@ -1,13 +1,13 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Model
+ * Module: Endereco\Addressvalidation\Model
  * Copyright: (c) 2019 cccc.de
  * Date: 2019-06-26 14:32
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Model;
+namespace Endereco\Addressvalidation\Model;
 
 
 use Magento\Checkout\Model\ConfigProviderInterface;
@@ -20,7 +20,7 @@ class ConfigProvider implements ConfigProviderInterface
 {
     protected $configPrefix = 'cccc_addressvalidation_endereco_section';
 
-    const MODULE_NAME = 'CCCC_Addressvalidation';
+    const MODULE_NAME = 'Endereco_Addressvalidation';
 
     /** @var ScopeConfigInterface  */
     protected $scopeConfig;
@@ -109,7 +109,7 @@ class ConfigProvider implements ConfigProviderInterface
                 'serverApiUrl' => $this->scopeConfig->getValue($this->configPrefix . '/connection/baseurl', 'store'),
                 'agentName' => 'Magento:'.$this->magentoVersion.', Theme: '.$this->themeCode.', '.self::MODULE_NAME.': '.$this->moduleVersion,
                 'apiUrl' => [
-                    'proxy' => $this->urlInterface->getUrl('4cAddress/proxy/proxy'),
+                    'proxy' => $this->urlInterface->getUrl('endereco/proxy/proxy'),
                     'direct' => $this->urlInterface->getDirectUrl('cccc_adressvalidation/direct')
                 ]
             ],

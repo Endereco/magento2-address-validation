@@ -1,17 +1,17 @@
 <?php
 /**
- * Module: CCCC\Addressvalidation\Operation
+ * Module: Endereco\Addressvalidation\Operation
  * Copyright: (c) 2019 cccc.de
  * Date: 2019-05-22 15:33
  *
  *
  */
 
-namespace CCCC\Addressvalidation\Operation;
+namespace Endereco\Addressvalidation\Operation;
 
-use CCCC\Addressvalidation\Generator\RefererGenerator;
-use CCCC\Addressvalidation\Logger\RequestLogger;
-use CCCC\Addressvalidation\Model\ConfigProvider;
+use Endereco\Addressvalidation\Generator\RefererGenerator;
+use Endereco\Addressvalidation\Logger\RequestLogger;
+use Endereco\Addressvalidation\Model\ConfigProvider;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Locale\Resolver;
@@ -26,7 +26,7 @@ class BaseOperation
 {
     protected $configPrefix = 'cccc_addressvalidation_endereco_section';
 
-    const MODULE_NAME = 'CCCC_Addressvalidation';
+    const MODULE_NAME = 'Endereco_Addressvalidation';
 
     /** @var ScopeConfigInterface */
     protected $config;
