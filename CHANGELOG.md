@@ -1,3 +1,11 @@
+### 2.0.17
+
+- Change vendor name to Endereco
+
+### 2.0.16
+
+- Module compatibily for Magento 2.4.x
+
 ### 2.0.15
 
 - Changed integration in nginx - use DirectProxy.php in pub-folder
