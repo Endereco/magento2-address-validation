@@ -1,6 +1,8 @@
 ### 2.0.17
 
 - Change vendor name to Endereco
+- Fix issue with logged in user on checkout page
+- Fix issue with Address Validation feature doesn't work when edit the address in customer account dashboard on the frontend
 
 ### 2.0.16
 
