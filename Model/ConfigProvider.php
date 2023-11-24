@@ -42,6 +42,8 @@ class ConfigProvider implements ConfigProviderInterface
 
     protected $themeCode;
 
+    protected $moduleVersion;
+
     public function __construct(
         ScopeConfigInterface $scopeConfig,
         \Magento\Checkout\Model\Session $checkoutSession,
