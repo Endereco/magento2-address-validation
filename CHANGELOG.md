@@ -1,14 +1,19 @@
-### 2.0.17
+#### 2.0.18
+
+- Option CURLOPT_TCP_FASTOPEN is now configurable via backend
+- Updating README.md
+
+#### 2.0.17
 
 - Change vendor name to Endereco
 - Fix issue with logged in user on checkout page
 - Fix issue with Address Validation feature doesn't work when edit the address in customer account dashboard on the frontend
 
-### 2.0.16
+#### 2.0.16
 
 - Module compatibily for Magento 2.4.x
 
-### 2.0.15
+#### 2.0.15
 
 - Changed integration in nginx - use DirectProxy.php in pub-folder
 

@@ -33,17 +33,27 @@ if (empty($apiUrl) || empty($apiKeyRaw)) {
     $headersToSend[] = 'Content-Type: application/json';
 
     $curlHandle = curl_init($apiUrl);
-    curl_setopt_array(
-        $curlHandle,
-        [
-            CURLOPT_TCP_FASTOPEN => true,
-            CURLOPT_SSL_VERIFYHOST => 0,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => $content,
-            CURLOPT_HTTPHEADER => $headersToSend
-        ]
-    );
+	// Fetch the config value for TCP Fast Open from the backend
+	require __DIR__ . '/../app/bootstrap.php';
+	$objectManagerFactory = \Magento\Framework\App\Bootstrap::createObjectManagerFactory(BP, []);
+	$objectManager = $objectManagerFactory->create([]);
+	$scopeConfig = $objectManager->get(\Magento\Framework\App\Config\ScopeConfigInterface::class);
+	$useTcpFastOpen = $scopeConfig->getValue(
+		'cccc_addressvalidation_endereco_section/connection/use_tcp_fast_open',
+		\Magento\Store\Model\ScopeInterface::SCOPE_WEBSITE
+	);
+	$curlOptions = [
+		CURLOPT_SSL_VERIFYHOST => 0,
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_POST => true,
+		CURLOPT_POSTFIELDS => $content,
+		CURLOPT_HTTPHEADER => $headersToSend
+	];
+	// Add the CURLOPT_TCP_FASTOPEN option if enabled in the backend
+	if ($useTcpFastOpen) {
+		$curlOptions[CURLOPT_TCP_FASTOPEN] = true;
+	}
+    curl_setopt_array($curlHandle, $curlOptions);
 
     $time = microtime(true);
     $response = curl_exec($curlHandle);

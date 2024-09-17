@@ -105,17 +105,24 @@ class BaseOperation
         $ch = curl_init($url);
 
         $headers = $this->getRequestHeaders();
-        curl_setopt_array(
-            $ch,
-            [
-                CURLOPT_TCP_FASTOPEN => true,
-                CURLOPT_SSL_VERIFYHOST => 0,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_POST => true,
-                CURLOPT_POSTFIELDS => json_encode($requestDataCompiled),
-                CURLOPT_HTTPHEADER => $headers
-            ]
-        );
+		// Fetch the config value for TCP Fast Open from the backend
+		$useTcpFastOpen = $this->config->getValue(
+			$this->configPrefix . '/connection/use_tcp_fast_open', 
+			ScopeInterface::SCOPE_WEBSITE
+		);
+		$curlOptions = [
+			CURLOPT_SSL_VERIFYHOST => 0,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_POST => true,
+			CURLOPT_POSTFIELDS => json_encode($requestDataCompiled),
+			CURLOPT_HTTPHEADER => $headers
+		];
+		// Add the CURLOPT_TCP_FASTOPEN option if enabled in the backend
+        if ($useTcpFastOpen) {
+            $curlOptions[CURLOPT_TCP_FASTOPEN] = true;
+        }
+		
+        curl_setopt_array($ch, $curlOptions);
 
         if ($this->configProvider->shouldLogRequestsInSeparateFile()) {
             $logHash = hash('sha256', time().uniqid(rand(1, PHP_INT_MAX), true));

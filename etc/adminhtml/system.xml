@@ -57,6 +57,10 @@
                     <source_model>Endereco\Addressvalidation\Model\Config\Source\RefererMode</source_model>
                     <validate>validate-no-empty</validate>
                 </field>
+				<field id="use_tcp_fast_open" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Use TCP Fast Open for Faster Connections</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
             </group>
 
             <group id="integration" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
