@@ -34,14 +34,16 @@ if (empty($apiUrl) || empty($apiKeyRaw)) {
 
     $curlHandle = curl_init($apiUrl);
 	// Fetch the config value for TCP Fast Open from the backend
-	require __DIR__ . '/../app/bootstrap.php';
-	$objectManagerFactory = \Magento\Framework\App\Bootstrap::createObjectManagerFactory(BP, []);
-	$objectManager = $objectManagerFactory->create([]);
-	$scopeConfig = $objectManager->get(\Magento\Framework\App\Config\ScopeConfigInterface::class);
-	$useTcpFastOpen = $scopeConfig->getValue(
-		'cccc_addressvalidation_endereco_section/connection/use_tcp_fast_open',
-		\Magento\Store\Model\ScopeInterface::SCOPE_WEBSITE
-	);
+	$magentoRootPath = realpath(__DIR__ . '/../');
+	$configFilePath = $magentoRootPath . '/var/tcp_config_value.txt';
+	$useTcpFastOpen = 1;
+	if (file_exists($configFilePath)) {
+		$configValue = file_get_contents($configFilePath);
+		if ($configValue !== false) {
+			$parts = explode("=", $configValue);
+			$useTcpFastOpen = isset($parts[1]) ? trim($parts[1]) : $useTcpFastOpen;
+		}
+	}
 	$curlOptions = [
 		CURLOPT_SSL_VERIFYHOST => 0,
 		CURLOPT_RETURNTRANSFER => true,
