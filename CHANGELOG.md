@@ -1,3 +1,7 @@
+#### 2.0.19
+
+- Fixed sporadic issue with email addresses containing a “.” in the part before the @
+
 #### 2.0.18
 
 - Option CURLOPT_TCP_FASTOPEN is now configurable via backend
