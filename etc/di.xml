@@ -31,4 +31,8 @@
         <plugin name="cccc_save_validation_result_as_comment_guest"
                 type="Endereco\Addressvalidation\Plugin\SaveValidationResultToQuote" sortOrder="10"/>
     </type>
+	
+	<type name="Magento\Sales\Model\Order">
+        <plugin name="enderco_address_order_plugin" type="Endereco\Addressvalidation\Plugin\AddressOrderPlugin" />
+    </type>
 </config>

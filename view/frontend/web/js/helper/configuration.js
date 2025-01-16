@@ -76,6 +76,14 @@ define([
 
         useStreetFull: function() {
             return window.checkoutConfig.cccc.addressvalidation.endereco.mapping && window.checkoutConfig.cccc.addressvalidation.endereco.mapping.useStreetFull
-        }
+        },
+		
+		getFullStreetTemplate: function(countryId) {
+			var fullStreetFormat = window.EnderecoIntegrator.config.templates.fullStreetFormat;
+			if (typeof fullStreetFormat[countryId] !== 'undefined') {
+				return fullStreetFormat[countryId];
+			}
+			return fullStreetFormat['default'];
+		}
     };
 });

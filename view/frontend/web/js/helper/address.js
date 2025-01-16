@@ -38,13 +38,24 @@ define([
                 );
                 source.set(contextPrefix +"."+ configurationHelper.ccccGetAddressDataByFieldSelector('houseNumber', 'street[1]'), (addressData.houseNumber?addressData.houseNumber:""));
             } else {
-                logger.logData(
-                    "helper/address/ccccUpdateAddressSource: Setting combined field "+source+"."
-                    +configurationHelper.ccccGetAddressDataByFieldSelector('street', 'street[0]')+" => "
-                    +addressData.street + " " + addressData.houseNumber
-                );
-                source.set(contextPrefix +"."+ configurationHelper.ccccGetAddressDataByFieldSelector('street', 'street[0]'), addressData.street + (addressData.houseNumber?" " + addressData.houseNumber:""));
-            }
+				var countryId = addressData.countryId.toLowerCase();
+				var fullStreetTemplate = configurationHelper.getFullStreetTemplate(countryId);
+				if (fullStreetTemplate === '{{{buildingNumber}}} {{{streetName}}}') {
+					logger.logData(
+						"helper/address/ccccUpdateAddressSource: Setting combined field "+source+"."
+						+configurationHelper.ccccGetAddressDataByFieldSelector('street', 'street[0]')+" => "
+						+addressData.houseNumber + " " + addressData.street
+					);
+					source.set(contextPrefix +"."+ configurationHelper.ccccGetAddressDataByFieldSelector('street', 'street[0]'), (addressData.houseNumber ? addressData.houseNumber + " ": "") + addressData.street);
+				} else {
+					logger.logData(
+						"helper/address/ccccUpdateAddressSource: Setting combined field "+source+"."
+						+configurationHelper.ccccGetAddressDataByFieldSelector('street', 'street[0]')+" => "
+						+addressData.street + " " + addressData.houseNumber
+					);
+					source.set(contextPrefix +"."+ configurationHelper.ccccGetAddressDataByFieldSelector('street', 'street[0]'), addressData.street + (addressData.houseNumber?" " + addressData.houseNumber:""));
+				}
+			}
 
             logger.logData(
                 "helper/address/ccccUpdateAddressSource: Setting field shippingAddress.region => (null)"

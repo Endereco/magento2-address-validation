@@ -89,7 +89,12 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment>Enable address check against Endereco</comment>
                 </field>
-
+				
+				<field id="countries_with_house_number_first" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Countries with Address Format: House Number + Street Name</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Country</source_model>
+                </field>
+				
                 <field id="force_valid_address" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Force valid address</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>

@@ -21,8 +21,8 @@ class ConfigProvider implements ConfigProviderInterface
     protected $configPrefix = 'cccc_addressvalidation_endereco_section';
 
     const MODULE_NAME = 'Endereco_Addressvalidation';
-
-    /** @var ScopeConfigInterface  */
+	
+	/** @var ScopeConfigInterface  */
     protected $scopeConfig;
 
     /**
@@ -41,8 +41,8 @@ class ConfigProvider implements ConfigProviderInterface
     protected $magentoVersion;
 
     protected $themeCode;
-
-    protected $moduleVersion;
+	
+	protected $moduleVersion;
 
     public function __construct(
         ScopeConfigInterface $scopeConfig,
@@ -112,11 +112,21 @@ class ConfigProvider implements ConfigProviderInterface
                 'agentName' => 'Magento:'.$this->magentoVersion.', Theme: '.$this->themeCode.', '.self::MODULE_NAME.': '.$this->moduleVersion,
                 'apiUrl' => [
                     'proxy' => $this->urlInterface->getUrl('endereco/proxy/proxy'),
-                    'direct' => $this->urlInterface->getDirectUrl('cccc_adressvalidation/direct')
-                ]
+                    'direct' => $this->urlInterface->getDirectUrl('endereco_adressvalidation/direct')
+                ],
+				'countries_with_house_number_first' => $this->getCountriesWithHouseNumberStreetFormat()
             ],
         ];
     }
+	
+	protected function getCountriesWithHouseNumberStreetFormat() {
+		$countries = $this->scopeConfig->getValue($this->configPrefix . '/features/countries_with_house_number_first', 'store');
+		if (empty($countries)) {
+			return [];
+		}
+		$countriesArr = array_map('trim', explode(',', $countries));
+		return $countriesArr;
+	}
 
     /**
      * All API requests should be logged in the separate file

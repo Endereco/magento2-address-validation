@@ -19,5 +19,11 @@ var config = {
                 'Endereco_Addressvalidation/js/view/customer-address-validation-mixin': true
             }
         }
+    },
+	map: {
+        '*': {
+            'Magento_Checkout/js/view/shipping-information/address-renderer/default': 
+                'Endereco_Addressvalidation/js/view/shipping-information/address-renderer/default'
+        }
     }
 };

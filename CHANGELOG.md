@@ -1,3 +1,9 @@
+#### 2.0.20
+
+- Add configuration and checking of addresses in the "House number + street" format
+- Fix check of multi-line addresses in the checkout
+- Fix issue with DirectProxy
+
 #### 2.0.19
 
 - Fixed sporadic issue with email addresses containing a “.” in the part before the @

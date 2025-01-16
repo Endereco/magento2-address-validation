@@ -118,6 +118,22 @@ define([
             window.EnderecoIntegrator.config.ux.changeFieldsOrder = true;
             window.EnderecoIntegrator.config.templates.primaryButtonClasses = 'button action continue primary';
             window.EnderecoIntegrator.config.templates.secondaryButtonClasses = 'button action continue';
+			// address format based on countries
+			if (!window.EnderecoIntegrator.config.templates.fullAddressFormat) {
+				window.EnderecoIntegrator.config.templates.fullAddressFormat = {};
+			}
+			if (!window.EnderecoIntegrator.config.templates.fullStreetFormat) {
+				window.EnderecoIntegrator.config.templates.fullStreetFormat = {};
+			}
+            const countries = window.checkoutConfig.cccc.addressvalidation.endereco.countries_with_house_number_first;
+			if (Array.isArray(countries) && countries.length > 0) {
+				window.EnderecoIntegrator.config.templates.fullAddressFormat['default'] = '{{#useHtml}}<span class="endereco-street-name">{{/useHtml}}{{{streetName}}}{{#useHtml}}</span>{{/useHtml}} {{#useHtml}}<span class="endereco-building-number">{{/useHtml}}{{{buildingNumber}}}{{#useHtml}}</span>{{/useHtml}} <br>\n{{#useHtml}}<span class="endereco-postal-code">{{/useHtml}}{{{postalCode}}}{{#useHtml}}</span>{{/useHtml}} {{#useHtml}}<span class="endereco-locality">{{/useHtml}}{{{locality}}}{{#useHtml}}</span>{{/useHtml}} <br>\n{{#showCountry}}{{#useHtml}}<span class="endereco-country-code">{{/useHtml}}{{{countryName}}}{{#useHtml}}</span>{{/useHtml}}{{/showCountry}}';
+				window.EnderecoIntegrator.config.templates.fullStreetFormat['default'] = '{{{streetName}}} {{{buildingNumber}}}';
+				countries.forEach(country => {
+					window.EnderecoIntegrator.config.templates.fullAddressFormat[country.toLowerCase()] = '{{#useHtml}}<span class="endereco-building-number">{{/useHtml}}{{{buildingNumber}}}{{#useHtml}}</span>{{/useHtml}} {{#useHtml}}<span class="endereco-street-name">{{/useHtml}}{{{streetName}}}{{#useHtml}}</span>{{/useHtml}} <br>\n{{#useHtml}}<span class="endereco-postal-code">{{/useHtml}}{{{postalCode}}}{{#useHtml}}</span>{{/useHtml}} {{#useHtml}}<span class="endereco-locality">{{/useHtml}}{{{locality}}}{{#useHtml}}</span>{{/useHtml}} <br>\n{{#showCountry}}{{#useHtml}}<span class="endereco-country-code">{{/useHtml}}{{{countryName}}}{{#useHtml}}</span>{{/useHtml}}{{/showCountry}}';
+					window.EnderecoIntegrator.config.templates.fullStreetFormat[country.toLowerCase()] = '{{{buildingNumber}}} {{{streetName}}}';
+				});
+			}
 
             window.EnderecoIntegrator.countryCodeToNameMapping = window.checkoutConfig.cccc.addressvalidation.endereco.countries;
 

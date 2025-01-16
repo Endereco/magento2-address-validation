@@ -18,6 +18,9 @@ define([
     'use strict';
 
     var mixin = {
+		defaults: {
+            detailsTemplate: 'Endereco_Addressvalidation/billing-address/details',
+        },
         fieldSelectors: {},
         amsInitialized: false,
         eventsInitialized: false,
@@ -29,6 +32,30 @@ define([
                     this.doAmsInit();
                 }
             }.bind(this));
+        },
+		
+		/**
+         *
+         * @param {Object} address
+         * @return {String}
+         */
+        getFormattedStreet: function (address) {
+            if (!address || !address.street) {
+                return '';
+            }
+            const street = _.compact(address.street);
+			if (!configurationHelper.useStreetFull()) {
+				if (street.length == 2) {
+					var countryId = address.countryId.toLowerCase();
+					var fullStreetTemplate = configurationHelper.getFullStreetTemplate(countryId);
+					if (fullStreetTemplate === '{{{buildingNumber}}} {{{streetName}}}') {
+						return `${street[1]} ${street[0]}`;	
+					} else {
+						return `${street[0]} ${street[1]}`;	
+					}
+				}							
+			} 
+			return street.join(', ');
         },
 
 
